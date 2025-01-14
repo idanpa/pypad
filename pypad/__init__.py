@@ -200,14 +200,14 @@ class PyPadTextEdit(QTextEdit, BaseFrontendMixin):
             cursor.movePosition(QTextCursor.Right)
             cursor.movePosition(QTextCursor.End, QTextCursor.KeepAnchor)
             if visible:
-                block_format = QTextBlockFormat()
-                block_format.setAlignment(Qt.AlignCenter)
-                cursor.setBlockFormat(block_format)
+                width = 40
                 format = QTextCharFormat()
                 format.setForeground(theme['splash_color'])
-                cursor.insertText('\n\n\n\n\npypad - Python Notepad\n\n'
-                                + self.kernel_info + '\n\n'
-                                'Restart Kernel [Ctrl]+R\n', format)
+                cursor.insertText('\n\n\n\n\n' + 'pypad - Python Notepad'.center(width) + '\n\n'
+                                + self.kernel_info.center(width) + '\n\n'
+                                '       [Ctrl]+R - Restart Kernel\n'
+                                '       [Ctrl]+C - Interrupt Kernel\n'
+                                , format)
             else:
                 cursor.removeSelectedText()
 
@@ -216,12 +216,12 @@ class PyPadTextEdit(QTextEdit, BaseFrontendMixin):
 
     def code_cell(self, cell_idx):
         cell = self.table.cellAt(cell_idx, 0)
-        assert cell.isValid()
+        assert cell.isValid(), cell_idx
         return cell
 
     def out_cell(self, cell_idx):
         cell = self.table.cellAt(cell_idx, 1)
-        assert cell.isValid()
+        assert cell.isValid(), cell_idx
         return cell
 
     def insert_cell(self, cell_idx):
@@ -646,7 +646,7 @@ class PyPadTextEdit(QTextEdit, BaseFrontendMixin):
             return
         mrow, mrow_num, mcol, mcol_num = cursor.selectedTableCells()
         cell = self.table.cellAt(cursor)
-        assert cell.isValid()
+        assert cell.isValid(), cell_idx
         col = cell.column()
         cell_idx = cell.row()
         # allow navigation keys to propegate, restrict navigation to one column
@@ -678,6 +678,8 @@ class PyPadTextEdit(QTextEdit, BaseFrontendMixin):
                 cell_idx = mrow
                 self.remove_cells(mrow+1, mrow_num)
                 if e.key() in [Qt.Key_Return, Qt.Key_Enter, Qt.Key_Backspace, Qt.Key_Delete]:
+                    if cell_idx == 0:
+                        self.execute(0) # to show splash
                     return
                 # else, add text and execute
             elif e.key() in [Qt.Key_Return, Qt.Key_Enter]  and not (e.modifiers() & Qt.ShiftModifier):
