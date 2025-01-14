@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="800"
+   height="800"
+   viewBox="0 0 211.66667 211.66667"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   sodipodi:docname="icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.56745319"
+     inkscape:cx="261.69559"
+     inkscape:cy="227.33153"
+     inkscape:window-width="1584"
+     inkscape:window-height="838"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,15.902361,0,1 @ F,0,0,1,0,12.768662,0,1 @ F,0,0,1,0,12.160628,0,1 @ F,0,0,1,0,11.833229,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#f5e29f;fill-opacity:1;stroke:#000000;stroke-width:10.781;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1"
+       width="144.99211"
+       height="146.39528"
+       x="31.337008"
+       y="32.740154"
+       inkscape:path-effect="#path-effect1"
+       sodipodi:type="rect"
+       d="M 47.239369,32.740154 H 163.56046 a 12.768662,12.768662 45 0 1 12.76866,12.768662 V 166.97481 a 12.160628,12.160628 135 0 1 -12.16063,12.16062 l -120.998253,0 A 11.833229,11.833229 45 0 1 31.337008,167.3022 l 0,-118.659685 A 15.902361,15.902361 135 0 1 47.239369,32.740154 Z"
+       transform="matrix(1.2371083,0,0,1.21715,-22.860307,-16.185894)" />
+    <path
+       style="fill:#ffffff;stroke:#000000;stroke-width:15.875;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 49.888189,9.1961396 V 39.365207"
+       id="path5"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#ffffff;stroke:#000000;stroke-width:15.875;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 86.358969,9.1961396 V 39.365207"
+       id="path5-9"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#ffffff;stroke:#000000;stroke-width:15.875;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 122.82975,9.1961396 V 39.365207"
+       id="path5-5"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#ffffff;stroke:#000000;stroke-width:15.875;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 159.30053,9.1961396 V 39.365207"
+       id="path5-1"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="M 37.715571,68.232602 41.146291,64.706585 62.492992,82.527268 41.146291,100.34795 37.715571,96.853698 55.028,82.5908 Z m 29.913333,0 3.43072,-3.526017 L 92.406325,82.527268 71.059624,100.34795 67.628904,96.853698 84.941335,82.5908 Z m 29.913333,0 3.430723,-3.526017 21.3467,17.820683 -21.3467,17.820682 L 97.542237,96.853698 114.85467,82.5908 Z"
+       id="text5"
+       style="font-size:88.1944px;font-family:Consolas;-inkscape-font-specification:Consolas;letter-spacing:-7.9375px;stroke:#000000;stroke-width:5.8551;stroke-linecap:round;stroke-linejoin:round"
+       aria-label="&gt;&gt;&gt;" />
+  </g>
+</svg>
