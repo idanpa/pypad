@@ -784,6 +784,8 @@ class PyPadTextEdit(QTextEdit, BaseFrontendMixin):
     def insertFromMimeData(self, source: QMimeData):
         # \u2028=newline, \n=new cell
         lines = source.text().split('\n')
+        if lines[-1] == '': # ignore last new line
+            lines.pop()
         lines.reverse()
 
         with self.edit_block():
@@ -796,11 +798,13 @@ class PyPadTextEdit(QTextEdit, BaseFrontendMixin):
                 return
             cell_idx = cell.row()
             # if multiple cells selected, start with deleting them
-            if mrow > 0:
+            if mrow_num > 0:
                 self.insert_cell(mrow)
-                cell_idx = mrow
                 self.remove_cells(mrow+1, mrow_num)
+                cell_idx = mrow
+                cursor = self.textCursor()
 
+            execute_cell_idx = cell_idx
             if len(lines) == 1:
                 cursor.insertText(lines.pop())
             else:
@@ -815,14 +819,19 @@ class PyPadTextEdit(QTextEdit, BaseFrontendMixin):
                     if is_complete == 'incomplete' and lines:
                         lines_to_insert += '\u2028'
                     else: # complete or invalid or no more lines
-                        self.insert_cell(cell_idx+1)
-                        cell_idx += 1
+                        if mrow_num <= 0: # no need if we already inserted before
+                            cell_idx += 1
+                            self.insert_cell(cell_idx)
+                        mrow_num = -1
                         self.textCursor().insertText(lines_to_insert)
+                        self.log.debug(f'inserting: {lines_to_insert}')
                         lines_to_insert = ''
-                self.textCursor().insertText(code_after_cursor)
-                self.setTextCursor(self.code_cell(cell_idx).firstCursorPosition())
+                if code_after_cursor != '':
+                    self.insert_cell(cell_idx+1)
+                    self.textCursor().insertText(code_after_cursor)
+                self.setTextCursor(self.code_cell(cell_idx).lastCursorPosition())
 
-            self.execute(cell.row())
+            self.execute(execute_cell_idx)
 
     @pyqtSlot()
     def recalculate_columns(self):
